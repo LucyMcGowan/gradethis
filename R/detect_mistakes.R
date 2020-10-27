@@ -71,7 +71,7 @@ detect_mistakes <- function(user,
             this_name = enclosing_arg,
             enclosing_call = enclosing_call
           ),
-          category = category_mistake(solution)
+          category = category_mistake(enclosing_call)
         )
       )
     }
