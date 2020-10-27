@@ -99,7 +99,9 @@ grade_code <- function(
   if (is_code_identical(user, solution)) {
     is_same_info <- graded(correct = TRUE)
   } else {
-    message <- detect_mistakes(user, solution)
+    mis <- detect_mistakes(user, solution)
+    message <- mis$message
+    category <- mis$category
     is_same_info <- graded(correct = is.null(message), message = message)
   }
 
@@ -132,7 +134,7 @@ grade_code <- function(
     )
   }
 
-  graded(correct = FALSE, message = message)
+  graded(correct = FALSE, message = message, category = category)
 }
 
 
