@@ -36,7 +36,8 @@ Imports:
     glue,
     checkmate,
     testthat,
-    learnr
+    learnr,
+    tidycode
 Suggests:
     tidyr
 Remotes:
