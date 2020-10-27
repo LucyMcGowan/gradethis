@@ -5,6 +5,7 @@
 #'
 #' @param message A character string of the message to be displayed.
 #' @param correct A boolean value of whether or not the checked code is correct.
+#' @param ... Optional additional items to be passed to the output list.
 #' @export
 graded <- function(correct, message = NULL, ...) {
   chkm8_single_character(message)
