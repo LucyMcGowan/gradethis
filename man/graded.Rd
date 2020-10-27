@@ -4,12 +4,14 @@
 \alias{graded}
 \title{Graded object for submission value}
 \usage{
-graded(correct, message = NULL)
+graded(correct, message = NULL, ...)
 }
 \arguments{
 \item{correct}{A boolean value of whether or not the checked code is correct.}
 
 \item{message}{A character string of the message to be displayed.}
+
+\item{...}{Optional additional items to be passed to the output list.}
 }
 \description{
 The return value from \code{graded} should be returned by every
