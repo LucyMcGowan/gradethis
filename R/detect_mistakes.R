@@ -20,16 +20,18 @@ detect_mistakes <- function(user,
       
       if (i > length(user)) {
         return(
-          missing_answer(
+          list(message = missing_answer(
             this_prior_line = user[[length(user)]]
-          )
+          ),
+          category = NULL)
         )
       }
       if (i > length(solution)) {
         return(
-          extra_answer(
+          list(message = extra_answer(
             this_line = user[[i]]
-          )
+          ),
+          category = NULL)
         )
       }
       res <- detect_mistakes(
@@ -71,6 +73,7 @@ detect_mistakes <- function(user,
             this_name = enclosing_arg,
             enclosing_call = enclosing_call
           ),
+          ## TODO should this check if that is a call?
           category = category_mistake(enclosing_call)
         )
       )
@@ -126,7 +129,7 @@ detect_mistakes <- function(user,
               enclosing_call = enclosing_call,
               enclosing_arg = enclosing_arg
             ),
-            category = category(user)
+            category = category_mistake(user)
           )
         )
       }
